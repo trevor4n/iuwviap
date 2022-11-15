@@ -150,7 +150,7 @@
       <source>
         <address domain='0x0000' bus='0x00' slot='0x1f' function='0x3'/>
       </source>
-      <address type='pci' domain='0x0000' bus='0x07' slot='0x01' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x07' slot='0x01' function='0x0' multifunction='on'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
@@ -164,7 +164,7 @@
       <source>
         <address domain='0x0000' bus='0x00' slot='0x1f' function='0x5'/>
       </source>
-      <address type='pci' domain='0x0000' bus='0x07' slot='0x03' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x07' slot='0x01' function='0x5'/>
     </hostdev>
     <memballoon model='none'/>
   </devices>
