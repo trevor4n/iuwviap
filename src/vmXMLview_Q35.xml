@@ -61,16 +61,10 @@
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
-    <controller type='usb' index='0' model='qemu-xhci' ports='15'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
-    </controller>
     <controller type='sata' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
     </controller>
     <controller type='pci' index='0' model='pcie-root'/>
-    <controller type='virtio-serial' index='0'>
-      <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
-    </controller>
     <controller type='pci' index='1' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='1' port='0x8'/>
@@ -110,6 +104,12 @@
       <target chassis='8' port='0xe'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x6'/>
     </controller>
+    <controller type='virtio-serial' index='0'>
+      <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
+    </controller>
+    <controller type='usb' index='0' model='qemu-xhci' ports='15'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+    </controller>
     <interface type='bridge'>
       <mac address='52:54:00:7c:81:8f'/>
       <source bridge='br0'/>
@@ -136,28 +136,35 @@
       <source>
         <address domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
       </source>
-      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0' multifunction='on'/>
+      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0' multifunction='on'/>	
+    </hostdev>	
+    <hostdev mode='subsystem' type='pci' managed='yes'>	
+      <driver name='vfio'/>	
+      <source>	
+        <address domain='0x0000' bus='0x01' slot='0x00' function='0x1'/>	
+      </source>	
+      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x1'/>	
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
-        <address domain='0x0000' bus='0x01' slot='0x00' function='0x1'/>
-      </source>
-      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x1'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <driver name='vfio'/>
-      <source>
-        <address domain='0x0000' bus='0x00' slot='0x14' function='0x0'/>
+        <address domain='0x0000' bus='0x00' slot='0x1f' function='0x3'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x07' slot='0x01' function='0x0'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
-        <address domain='0x0000' bus='0x00' slot='0x1f' function='0x5'/>
+        <address domain='0x0000' bus='0x00' slot='0x14' function='0x0'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x07' slot='0x02' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
+      <source>
+        <address domain='0x0000' bus='0x00' slot='0x1f' function='0x5'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x07' slot='0x03' function='0x0'/>
     </hostdev>
     <memballoon model='none'/>
   </devices>
