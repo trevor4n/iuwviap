@@ -22,7 +22,6 @@
     <vcpupin vcpu='7' cpuset='13'/>
     <vcpupin vcpu='8' cpuset='6'/>
     <vcpupin vcpu='9' cpuset='14'/>
-    <vcpupin vcpu='10' cpuset='7'/>
     <emulatorpin cpuset='15'/>
   </cputune>
   <os>
@@ -108,7 +107,7 @@
       <source>
         <address domain='0x0000' bus='0x03' slot='0x00' function='0x1'/>
       </source>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x01'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x1'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
