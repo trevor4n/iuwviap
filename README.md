@@ -11,4 +11,10 @@ Guide I'm referencing: https://forums.serverbuilds.net/t/guide-remote-gaming-on-
     8 > 5: 
     https://forums.serverbuilds.net/t/guide-remote-gaming-on-unraid/4248/9#:~:text=Take%20note%20of%20the%20device%E2%80%99s%20bus%2C%20in%20this%20case%20it%E2%80%99s%20%E2%80%9C09%E2%80%9D.
 
+Other suggestions:
+  return to a state of less symmetry::
+     <vcpupin vcpu='9' cpuset='14'/>
+     <vcpupin vcpu='10' cpuset='7'/> //this is the line which was removed
+    <emulatorpin cpuset='15'/>
+
   Icebox: remote desktop access
