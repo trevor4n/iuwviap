@@ -37,15 +37,15 @@ IOMMU group 18:			 	[8086:15f3] 06:00.0 Ethernet controller: Intel Corporation E
 
 
 //Reserved IDs
-IOMMU group 2:			 	[8086:43ed] 00:14.0 USB controller: Intel Corporation Tiger Lake-H USB 3.2 Gen 2x1 xHCI Host Controller (rev 11)
+IOMMU group 2:			 	[8086:43ed] 00:14.0 USB controller: Intel Corporation Tiger Lake-H USB 3.2 Gen 2x1 xHCI Host Controller (rev 11) //vm other pci devices ticbox
 												This controller is bound to vfio, connected USB devices are not visible.
 											[8086:43ef] 00:14.2 RAM memory: Intel Corporation Tiger Lake-H Shared SRAM (rev 11)
-IOMMU group 3:			 	[8086:43f0] 00:14.3 Network controller: Intel Corporation Tiger Lake PCH CNVi WiFi (rev 11)
+IOMMU group 3:			 	[8086:43f0] 00:14.3 Network controller: Intel Corporation Tiger Lake PCH CNVi WiFi (rev 11) //removed
 
 IOMMU group 13:			 	[8086:4385] 00:1f.0 ISA bridge: Intel Corporation Device 4385 (rev 11)
  											[8086:43c8] 00:1f.3 Audio device: Intel Corporation Tiger Lake-H HD Audio Controller (rev 11)
 											[8086:43a3] 00:1f.4 SMBus: Intel Corporation Tiger Lake-H SMBus Controller (rev 11)
- 											[8086:43a4] 00:1f.5 Serial bus controller: Intel Corporation Tiger Lake-H SPI Controller (rev 11)
+ 											[8086:43a4] 00:1f.5 Serial bus controller: Intel Corporation Tiger Lake-H SPI Controller (rev 11) //vm other pci devices ticbox
 
-IOMMU group 15:			 	[10de:1b81] 03:00.0 VGA compatible controller: NVIDIA Corporation GP104 [GeForce GTX 1070] (rev a1)
-IOMMU group 16:			 	[10de:10f0] 03:00.1 Audio device: NVIDIA Corporation GP104 High Definition Audio Controller (rev a1)
+IOMMU group 15:			 	[10de:1b81] 03:00.0 VGA compatible controller: NVIDIA Corporation GP104 [GeForce GTX 1070] (rev a1) //vm gpu dropdown
+IOMMU group 16:			 	[10de:10f0] 03:00.1 Audio device: NVIDIA Corporation GP104 High Definition Audio Controller (rev a1) //vm sound card dropdown
