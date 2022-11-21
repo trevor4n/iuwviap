@@ -14,4 +14,4 @@ Guide I'm referencing: https://forums.serverbuilds.net/t/guide-remote-gaming-on-
 (...)
 
 VM Status:
-Running 2nd most optimally w/ SATA SSDs mounted & shared
+Running 2nd most optimally w/ SATA SSDs mounted & shared ✅
