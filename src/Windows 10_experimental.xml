@@ -62,8 +62,8 @@
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
-    <controller type='sata' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
+    <controller type='usb' index='0' model='qemu-xhci' ports='15'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <controller type='pci' index='0' model='pcie-root'/>
     <controller type='pci' index='1' model='pcie-root-port'>
@@ -91,12 +91,6 @@
       <target chassis='5' port='0x14'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x4'/>
     </controller>
-    <controller type='virtio-serial' index='0'>
-      <address type='pci' domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
-    </controller>
-    <controller type='usb' index='0' model='qemu-xhci' ports='15'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
-    </controller>
     <controller type='pci' index='6' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='6' port='0x8'/>
@@ -105,6 +99,12 @@
     <controller type='pci' index='7' model='pcie-to-pci-bridge'>
       <model name='pcie-pci-bridge'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
+    </controller>
+    <controller type='virtio-serial' index='0'>
+      <address type='pci' domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
+    </controller>
+    <controller type='sata' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:75:e1:ef'/>
@@ -136,21 +136,21 @@
         <address domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
       </source>
       <rom file='/mnt/user/isos/NVIDIA.GTX1070.8192.160520.rom'/>
-      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0' multifunction='on'/>
+      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x01' slot='0x00' function='0x1'/>
       </source>
-      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x1'/>
+      <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x00' slot='0x1f' function='0x3'/>
       </source>
-      <address type='pci' domain='0x0000' bus='0x07' slot='0x01' function='0x3' multifunction='on'/>
+      <address type='pci' domain='0x0000' bus='0x07' slot='0x01' function='0x0'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
@@ -164,7 +164,7 @@
       <source>
         <address domain='0x0000' bus='0x00' slot='0x1f' function='0x5'/>
       </source>
-      <address type='pci' domain='0x0000' bus='0x07' slot='0x01' function='0x5'/>
+      <address type='pci' domain='0x0000' bus='0x07' slot='0x03' function='0x0'/>
     </hostdev>
     <memballoon model='none'/>
   </devices>
