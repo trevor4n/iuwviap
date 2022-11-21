@@ -10,3 +10,8 @@ Guide I'm referencing: https://forums.serverbuilds.net/t/guide-remote-gaming-on-
       other pci devices:  none checked 
     8 > 5: 
     https://forums.serverbuilds.net/t/guide-remote-gaming-on-unraid/4248/9#:~:text=Take%20note%20of%20the%20device%E2%80%99s%20bus%2C%20in%20this%20case%20it%E2%80%99s%20%E2%80%9C09%E2%80%9D.
+
+(...)
+
+VM Status:
+Running 2nd most optimally w/ SATA SSDs mounted & shared
