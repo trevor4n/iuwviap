@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <domain type='kvm'>
-  <name>Windows 10_Q35_GPU-Bios</name>
+  <name>Windows 10_empirical</name>
   <uuid>be8f57f3-f626-8efb-f54a-3162395710c2</uuid>
+  <description>Unraid running on ssd_cache</description>
   <metadata>
     <vmtemplate xmlns="unraid" name="Windows 10" icon="windows.png" os="windows10"/>
   </metadata>
@@ -61,8 +62,8 @@
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
-    <controller type='sata' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
+    <controller type='usb' index='0' model='qemu-xhci' ports='15'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <controller type='pci' index='0' model='pcie-root'/>
     <controller type='pci' index='1' model='pcie-root-port'>
@@ -107,8 +108,8 @@
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
-    <controller type='usb' index='0' model='qemu-xhci' ports='15'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+    <controller type='sata' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:f9:a2:92'/>
