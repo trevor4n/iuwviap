@@ -2,7 +2,7 @@
 <domain type='kvm'>
   <name>Windows 10_empirical</name>
   <uuid>be8f57f3-f626-8efb-f54a-3162395710c2</uuid>
-  <description>Unraid running on ssd_cache</description>
+  <description>Unraid via nvme_cache</description>
   <metadata>
     <vmtemplate xmlns="unraid" name="Windows 10" icon="windows.png" os="windows10"/>
   </metadata>
@@ -57,6 +57,12 @@
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </disk>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='raw' cache='writeback'/>
+      <source file='/mnt/user/domains/Expansion vDisk(s)/vdisk-expansion.img'/>
+      <target dev='hdd' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
+    </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
       <source file='/mnt/user/isos/virtio-win-0.1.225-2.iso'/>
@@ -106,6 +112,11 @@
       <target chassis='8' port='0xe'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x6'/>
     </controller>
+    <controller type='pci' index='9' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='9' port='0xf'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x7'/>
+    </controller>
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
@@ -140,14 +151,14 @@
         <address domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
       </source>
       <rom file='/mnt/user/isos/NVIDIA.GTX1070.8192.160520.rom'/>
-      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0' multifunction='on'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x01' slot='0x00' function='0x1'/>
       </source>
-      <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x1'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
@@ -162,6 +173,13 @@
         <address domain='0x0000' bus='0x00' slot='0x14' function='0x0'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x07' slot='0x02' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
+      <source>
+        <address domain='0x0000' bus='0x00' slot='0x14' function='0x3'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x09' slot='0x00' function='0x0'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
