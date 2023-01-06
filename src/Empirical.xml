@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <domain type='kvm'>
-  <name>Windows 10_empirical</name>
+  <name>Empirical</name>
   <uuid>be8f57f3-f626-8efb-f54a-3162395710c2</uuid>
-  <description>Unraid via nvme_cache</description>
+  <description>Unraid Win10 VM via nvme_cache</description>
   <metadata>
     <vmtemplate xmlns="unraid" name="Windows 10" icon="windows.png" os="windows10"/>
   </metadata>
